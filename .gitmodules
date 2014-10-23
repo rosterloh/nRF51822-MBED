@@ -1,0 +1,9 @@
+[submodule "mbed-src"]
+	path = mbed-src
+	url = https://github.com/mbedmicro/mbed
+[submodule "BLE_API"]
+	path = BLE_API
+	url = https://github.com/rgrover/BLE_API
+[submodule "nRF51822"]
+	path = nRF51822
+	url = https://github.com/rgrover/nRF51822
