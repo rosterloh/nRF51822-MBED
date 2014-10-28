@@ -12,9 +12,27 @@ For Windows development the easiest way to get this set up is with [Chocolatey](
 
 ```bash
 $ cinst git make cmake gcc-arm-embedded
+$ git clone https://github.com/rosterloh/nRF51822-MBED
+$ git submodule init
+$ git submodule update
 ```
 
 ### Submodules
+
 * [mbed-src](https://github.com/mbedmicro/mbed)
 * [BLE_API](https://github.com/rgrover/BLE_API)
 * [nRF51822](https://github.com/rgrover/nRF51822)
+
+```bash
+$ git submodule update --remote
+```
+
+### Building
+
+```bash
+$ cd src\BLE_NUDGE
+$ mkdir build
+$ cd build
+$ cmake ..
+$ make
+```
