@@ -19,6 +19,7 @@ $ git submodule update
 
 ### Submodules
 
+* [build](https://github.com/rosterloh/gcc-mbed-build)
 * [mbed-src](https://github.com/mbedmicro/mbed)
 * [BLE_API](https://github.com/rgrover/BLE_API)
 * [nRF51822](https://github.com/rgrover/nRF51822)
@@ -27,7 +28,7 @@ $ git submodule update
 $ git submodule update --remote
 ```
 
-### Building
+### Building with CMake
 
 ```bash
 $ cd src\BLE_NUDGE
@@ -35,4 +36,11 @@ $ mkdir build
 $ cd build
 $ cmake ..
 $ make
+```
+
+### Building with GNU Make
+
+```bash
+$ cd src/test
+$ make NRF51822
 ```
