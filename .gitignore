@@ -1,3 +1,4 @@
 src/BLE_NUDGE/build
+src/MetaWear/build
 src/test/LPC11U24
 src/test/NRF51822

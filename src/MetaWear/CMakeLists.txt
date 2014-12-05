@@ -1,3 +1,13 @@
+INCLUDE(CMakeForceCompiler)
+SET(CMAKE_SYSTEM_NAME Generic)
+SET(CMAKE_SYSTEM_VERSION 1)
+SET(CMAKE_SYSTEM_PROCESSOR arm)
+SET(CMAKE_CROSSCOMPILING 1)
+SET(CMAKE_C_COMPILER_FORCED TRUE)
+CMAKE_FORCE_C_COMPILER(arm-none-eabi-gcc GNU)
+CMAKE_FORCE_CXX_COMPILER(arm-none-eabi-g++ GNU)
+SET(CMAKE_GENERATOR "Unix Makefiles")
+
 #
 # CMake configuration
 #
@@ -12,11 +22,16 @@ cmake_minimum_required (VERSION 2.8)
 # and to the root binary directory of the project as ${METAWEAR}.
 project (METAWEAR)
 
+# The version number.
+set (METAWEAR_VERSION_MAJOR 1)
+set (METAWEAR_VERSION_MINOR 0)
+set (METAWEAR_VERSION_PATCH 0)
+set (METAWEAR_VERSION_TWEAK 0)
+
 # define some more paths to projects we depend on
 set (MBED_SRC_PATH     ${METAWEAR_SOURCE_DIR}/../../mbed-src/libraries/mbed)
 set (BLE_API_SRC_PATH  ${METAWEAR_SOURCE_DIR}/../../BLE_API)
 set (NRF51822_SRC_PATH ${METAWEAR_SOURCE_DIR}/../../nRF51822)
-
 
 # It's best to hide all the details of setting up the variable SRCS in a CMake
 # macro. The macro can then be called in all the project CMake list files to add
@@ -60,6 +75,7 @@ if (TOOLCHAIN STREQUAL "armcc")
 elseif(TOOLCHAIN STREQUAL "armgcc")
     set(CMAKE_CXX_COMPILER arm-none-eabi-g++)
     set(CMAKE_C_COMPILER   arm-none-eabi-gcc)
+    set(CMAKE_ASM_COMPILER arm-none-eabi-gcc)
     set(SIZE_COMMAND       arm-none-eabi-size)
     set(OBJCOPY_COMMAND    arm-none-eabi-objcopy)
 else()
@@ -81,7 +97,7 @@ message(STATUS "Main target : ${MAIN_TARGET}")
 ############################################################################
 # include directories
 include_directories(
-    ${BLE_HEART_RATE_SOURCE_DIR}
+    ${METAWEAR_SOURCE_DIR}
     ${MBED_SRC_PATH}/
     ${MBED_SRC_PATH}/api
     ${MBED_SRC_PATH}/common

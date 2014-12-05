@@ -34,7 +34,7 @@ $ git submodule update --remote
 $ cd src\BLE_NUDGE
 $ mkdir build
 $ cd build
-$ cmake ..
+$ cmake -G "Unix Makefiles" ..
 $ make
 ```
 

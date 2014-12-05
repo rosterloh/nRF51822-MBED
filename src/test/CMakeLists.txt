@@ -20,18 +20,18 @@ cmake_minimum_required (VERSION 2.8)
 # The name of our project is "METAWEAR". CMakeLists files in this project can
 # refer to the root source directory of the project as ${METAWEAR}
 # and to the root binary directory of the project as ${METAWEAR}.
-project (BLE_NUDGE)
+project (TEST_PROJECT)
 
 # The version number.
-set (BLE_NUDGE_VERSION_MAJOR 1)
-set (BLE_NUDGE_VERSION_MINOR 0)
-set (BLE_NUDGE_VERSION_PATCH 0)
-set (BLE_NUDGE_VERSION_TWEAK 0)
+set (TEST_PROJECT_VERSION_MAJOR 1)
+set (TEST_PROJECT_VERSION_MINOR 0)
+set (TEST_PROJECT_VERSION_PATCH 0)
+set (TEST_PROJECT_VERSION_TWEAK 0)
 
 # define some more paths to projects we depend on
-set (MBED_SRC_PATH     ${BLE_NUDGE_SOURCE_DIR}/../../mbed-src/libraries/mbed)
-set (BLE_API_SRC_PATH  ${BLE_NUDGE_SOURCE_DIR}/../../BLE_API)
-set (NRF51822_SRC_PATH ${BLE_NUDGE_SOURCE_DIR}/../../nRF51822)
+set (MBED_SRC_PATH     ${TEST_PROJECT_SOURCE_DIR}/../../mbed-src/libraries/mbed)
+set (BLE_API_SRC_PATH  ${TEST_PROJECT_SOURCE_DIR}/../../BLE_API)
+set (NRF51822_SRC_PATH ${TEST_PROJECT_SOURCE_DIR}/../../nRF51822)
 
 # It's best to hide all the details of setting up the variable SRCS in a CMake
 # macro. The macro can then be called in all the project CMake list files to add
@@ -97,7 +97,7 @@ message(STATUS "Main target : ${MAIN_TARGET}")
 ############################################################################
 # include directories
 include_directories(
-    ${BLE_NUDGE_SOURCE_DIR}
+    ${TEST_PROJECT_SOURCE_DIR}
     ${MBED_SRC_PATH}/
     ${MBED_SRC_PATH}/api
     ${MBED_SRC_PATH}/common
